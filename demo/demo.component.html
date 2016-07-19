@@ -1,0 +1,45 @@
+<md-card>
+    <md-card-title>{{title}}</md-card-title>
+    <md-card-content>
+        <p>For full instructions on click <a href="https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/blob/master/readme.md"
+                target="_blank">here</a>. To find out more about highlight.js can be found <a href="https://highlightjs.org/usage/">here</a>
+        </p>
+        <h3>sample 1</h3>
+        <h4>Raw pre code without highlighting</h4>
+        <pre>
+            <code>
+                export class HighlightJsDirective {
+                    @Input() useBr: boolean;
+
+                    constructor(el: ElementRef) {
+                        if (this.useBr) {
+                            hljs.configure({ useBR: true });
+                        }
+                        
+                        hljs.highlightBlock(el.nativeElement);
+                    }
+                }
+            </code>
+        </pre>
+        <h4>Same again highlighted using the highlight-js attribute directive (check index.html to see scripts required for style
+            and adding TypeScript as it is not in the common languages)</h4>
+        <pre>
+            <code highlight-js class="typescript">
+                export class HighlightJsDirective {
+                    @Input() useBr: boolean;
+
+                    constructor(el: ElementRef) {
+                        if (this.useBr) {
+                            hljs.configure({ useBR: true });
+                        }
+                        
+                        hljs.highlightBlock(el.nativeElement);
+                    }
+                }
+            </code>
+        </pre>
+    </md-card-content>
+</md-card>
+<md-card>
+
+</md-card>

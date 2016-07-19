@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>demo app</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+
+  <link href="../public/css/styles.css" rel="stylesheet">
+
+  <!-highlight.js and the monokai_sublime theme--->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/monokai_sublime.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/typescript.min.js"></script>
+
+  <!-- Polyfill(s) for older browsers -->
+  <script src="../node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="../node_modules/zone.js/dist/zone.js"></script>
+  <script src="../node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="../node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="../public/js/systemjs.config.js"></script>
+
+  <script>
+      System.import('demo').catch(function(err){ console.error(err); });
+    </script>
+</head>
+
+<body>
+  <demo-app>Loading...</demo-app>
+</body>
+
+</html>
