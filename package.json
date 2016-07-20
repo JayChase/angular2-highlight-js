@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "highlight.js integration with Angular 2",
   "directories": {},
   "files": [
@@ -22,7 +22,10 @@
     "prepublish": "tsc && npm run pack"
   },
   "keywords": [
-    "Angular2"
+    "Angular2",
+    "highlight.js",
+    "code snippet",
+    "code formatting"
   ],
   "author": {
     "name": "Jay Chase",
