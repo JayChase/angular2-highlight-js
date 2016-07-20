@@ -2,8 +2,6 @@
 
 [highlight.js](https://highlightjs.org) integration with Angular2.
 
-PRE-ALPHA: please wait for a day then it will be ready.
-
 ###Install
 
 ```bash
