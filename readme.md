@@ -10,7 +10,7 @@ npm install --save angular2-highlight-js
 
 ###Setup
 
-####Add the highlight.js script
+####Add highlight.js
 
 Load the highlight.js theme css in your single page
 
@@ -100,7 +100,7 @@ Add pre code to the view as normal with highlightjs and add the **highlight-js**
 </pre>
 ```
 
-####For the servive
+####For the service
 
 This can be used to highlight code blocks in HTML bound to an element in the view using innerHTML.
 
