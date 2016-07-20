@@ -104,7 +104,7 @@ Add pre code to the view as normal with highlightjs and add the **highlight-js**
 
 ####For the servive
 
-This can be used to highlight code blocks in HTML bound to elements view using innerHTML.
+This can be used to highlight code blocks in HTML bound to an element in the view using innerHTML.
 
 Import the service and declare the provider.
 
