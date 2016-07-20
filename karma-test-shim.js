@@ -16,7 +16,7 @@ function isSpecFile(path) {
 }
 
 function isBuiltFile(path) {
-    return isJsFile(path) && ((path.substr(0, builtPath.length) == '/base/demo/') || (path.substr(0, builtPath.length) == '/base/src/') );
+    return isJsFile(path) && ((path.substr(0, builtPath.length) == '/base/demo/') || (path.substr(0, builtPath.length) == '/base/src/'));
 }
 
 //change here as we keep spec.js in test folder
@@ -31,7 +31,13 @@ System.config({
 
 var packages = {
     'demo': { main: 'main.js', defaultExtension: 'js' },
-    'rxjs': { defaultExtension: 'js' }
+    'rxjs': { defaultExtension: 'js' },
+    '@angular2-material/core': { format: 'cjs', defaultExtension: 'js', main: 'core.js' },
+    '@angular2-material/toolbar': { format: 'cjs', defaultExtension: 'js', main: 'toolbar.js' },
+    '@angular2-material/card': { format: 'cjs', defaultExtension: 'js', main: 'card.js' },
+    '@angular2-material/input': { format: 'cjs', defaultExtension: 'js', main: 'input.js' },
+    '@angular2-material/button': { format: 'cjs', defaultExtension: 'js', main: 'button.js' },
+    'angular2-highlight-js': { main: 'index.js', defaultExtension: 'js' }
 };
 
 var ngPackageNames = [
@@ -39,11 +45,10 @@ var ngPackageNames = [
     'compiler',
     'core',
     'http',
+    'forms',
     'platform-browser',
     'platform-browser-dynamic',
-    'router',
-    'router-deprecated',
-    'upgrade'
+    'router'
 ];
 
 // Add package entries for angular packages
@@ -60,7 +65,9 @@ System.config(
         map: {
             'rxjs': 'node_modules/rxjs',
             '@angular': 'node_modules/@angular',
-            'demo': 'demo'
+            '@angular2-material': 'node_modules/@angular2-material',
+            'demo': 'demo',
+            'angular2-highlight-js': 'src'
         },
         packages: packages
     });

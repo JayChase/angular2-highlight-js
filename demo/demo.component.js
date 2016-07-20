@@ -15,12 +15,10 @@ var DemoComponent = (function () {
     function DemoComponent(el, service) {
         this.el = el;
         this.service = service;
-        this.code = "<pre><code class=\"typescript\">\n                export class HighlightJsDirective {\n                    @Input() useBr: boolean;\n\n                    constructor(el: ElementRef) {\n                        if (this.useBr) {\n                            hljs.configure({ useBR: true });\n                        }\n                        \n                        hljs.highlightBlock(el.nativeElement);\n                    }\n                }\n            </code></pre>";
     }
     DemoComponent.prototype.ngOnInit = function () { };
     DemoComponent.prototype.ngAfterViewInit = function () {
-        //let element: HTMLElement = this.el.nativeElement.querySelector('code');
-        this.service.highlight(this.el.nativeElement.querySelector('.typescript'), false);
+        this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
     };
     DemoComponent = __decorate([
         //in live this would be the node_modules path

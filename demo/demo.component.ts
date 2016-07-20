@@ -25,10 +25,7 @@ export class DemoComponent implements OnInit, AfterViewInit {
 
     ngOnInit() { }
 
-    ngAfterViewInit() {
-        //let element: HTMLElement = this.el.nativeElement.querySelector('code');
-        
-        this.service.highlight(this.el.nativeElement.querySelector('.typescript'), false);
+    ngAfterViewInit() {        
+        this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
     }
-
 }

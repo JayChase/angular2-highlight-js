@@ -14,7 +14,28 @@ import {
 
 import { AppComponent } from '../../demo/app.component';
 
+class MockHljs {
+    configure(args: any) {
+
+    }
+
+    highlightBlock(args: any) {
+
+    }
+}
+
 describe('App component', () => {
+    let mockHljs: MockHljs;
+
+    beforeEach(() => {
+        mockHljs = new MockHljs();
+
+        spyOn(mockHljs, 'highlightBlock');
+        spyOn(mockHljs, 'configure');
+
+        (<any>window).hljs = mockHljs;
+    });
+
     it('should build without error',
         async(
             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
@@ -41,7 +62,7 @@ describe('App component', () => {
                         fixture.detectChanges();
 
                         //check the title heading is test-title                        
-                        expect(fixture.debugElement.nativeElement.querySelector('.component-title')).toHaveText('test-title');
+                        expect(fixture.debugElement.nativeElement.querySelector('.component-title').innerText).toEqual('test-title');
                     });
             })
         )

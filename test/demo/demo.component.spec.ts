@@ -8,13 +8,34 @@ import {
     beforeEachProviders,
     describe,
     expect,
-    inject, 
+    inject,
     it
 } from '@angular/core/testing';
 
 import { DemoComponent } from '../../demo/demo.component';
 
-describe('App component', () => {
+class MockHljs {
+    configure(args: any) {
+
+    }
+
+    highlightBlock(args: any) {
+
+    }
+}
+
+describe('demo component', () => {
+    let mockHljs: MockHljs;
+
+    beforeEach(() => {
+        mockHljs = new MockHljs();
+
+        spyOn(mockHljs, 'highlightBlock');
+        spyOn(mockHljs, 'configure');
+
+        (<any>window).hljs = mockHljs;
+    });
+
     it('should build without error',
         async(
             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {

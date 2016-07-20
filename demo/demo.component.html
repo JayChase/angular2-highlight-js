@@ -1,22 +1,29 @@
 <md-card>
-    <md-card-title>{{title}}</md-card-title>
+    <md-card-title>Overview</md-card-title>
     <md-card-content>
-        <p>For full instructions on click <a href="https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/blob/master/readme.md"
+        For full instructions on click <a href="https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/blob/master/readme.md"
                 target="_blank">here</a>. To find out more about highlight.js can be found <a href="https://highlightjs.org/usage/">here</a>
-        </p>
-        <h3>sample 1</h3>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-title>sample 1: using the highlight-js attribute directive</md-card-title>
+    <md-card-content>
         <h4>Raw pre code without highlighting</h4>
         <pre>
             <code>
-                export class HighlightJsDirective {
+               export class HighlightJsDirective implements AfterContentInit {
                     @Input() useBr: boolean;
 
-                    constructor(el: ElementRef) {
+                    constructor(private elementRef: ElementRef, renderer: Renderer) {
+
+                    }
+
+                    ngAfterContentInit() {
                         if (this.useBr) {
                             hljs.configure({ useBR: true });
                         }
-                        
-                        hljs.highlightBlock(el.nativeElement);
+
+                        hljs.highlightBlock(this.elementRef.nativeElement);
                     }
                 }
             </code>
@@ -25,15 +32,19 @@
             and adding TypeScript as it is not in the common languages)</h4>
         <pre>
             <code highlight-js class="typescript">
-                export class HighlightJsDirective {
+                export class HighlightJsDirective implements AfterContentInit {
                     @Input() useBr: boolean;
 
-                    constructor(el: ElementRef) {
+                    constructor(private elementRef: ElementRef, renderer: Renderer) {
+
+                    }
+
+                    ngAfterContentInit() {
                         if (this.useBr) {
                             hljs.configure({ useBR: true });
                         }
-                        
-                        hljs.highlightBlock(el.nativeElement);
+
+                        hljs.highlightBlock(this.elementRef.nativeElement);
                     }
                 }
             </code>
@@ -41,5 +52,41 @@
     </md-card-content>
 </md-card>
 <md-card>
+    <md-card-title>sample 2: using the HighlightJsService</md-card-title>
+    <md-card-content>
+        <h4>Raw pre code without highlighting</h4>
+        <pre>
+            <code>
+                export class DemoComponent implements OnInit, AfterViewInit {
 
+                    constructor(private el: ElementRef, private service : HighlightJsService) {
+
+                    }
+
+                    ngOnInit() { }
+
+                    ngAfterViewInit() {        
+                        this.service.highlight(this.el.nativeElement.querySelector('.typescript'), false);
+                    }
+                }
+            </code>
+        </pre>
+        <h4>Same again highlighted using HighlightJsService.highlight(element)</h4>
+        <pre>
+            <code highlight-js class="typescript">
+                export class DemoComponent implements OnInit, AfterViewInit {
+
+                    constructor(private el: ElementRef, private service : HighlightJsService) {
+
+                    }
+
+                    ngOnInit() { }
+
+                    ngAfterViewInit() {        
+                        this.service.highlight(this.el.nativeElement.querySelector('.typescript'), false);
+                    }
+                }
+            </code>
+        </pre>
+    </md-card-content>
 </md-card>
