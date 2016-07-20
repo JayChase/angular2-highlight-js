@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "highlight.js integration with Angular 2",
   "directories": {},
   "files": [
@@ -18,7 +18,7 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "setup": "typings install && npm install",
-    "pack": "rimraf lib && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
+    "pack": "del lib /Q && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
     "prepublish": "tsc && npm run pack"
   },
   "keywords": [
@@ -82,6 +82,5 @@
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "zone.js": "^0.6.12"
-  },
-  "repository": {}
+  }
 }
