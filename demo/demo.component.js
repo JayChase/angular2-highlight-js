@@ -18,7 +18,7 @@ var DemoComponent = (function () {
     }
     DemoComponent.prototype.ngOnInit = function () { };
     DemoComponent.prototype.ngAfterViewInit = function () {
-        this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
+        this.service.highlight(this.el.nativeElement.querySelector('.highlight-this'));
     };
     DemoComponent = __decorate([
         //in live this would be the node_modules path
