@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer, Input, AfterContentInit } from '@angular/core';
+import { Directive, ElementRef, Input, AfterContentInit } from '@angular/core';
 
 declare var hljs: any;
 
@@ -7,7 +7,7 @@ declare var hljs: any;
 export class HighlightJsDirective implements AfterContentInit {
     @Input() useBr: boolean;
 
-    constructor(private elementRef: ElementRef, renderer: Renderer) {
+    constructor(private elementRef: ElementRef) {
 
     }
 

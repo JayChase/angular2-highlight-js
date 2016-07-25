@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var HighlightJsDirective = (function () {
-    function HighlightJsDirective(elementRef, renderer) {
+    function HighlightJsDirective(elementRef) {
         this.elementRef = elementRef;
     }
     HighlightJsDirective.prototype.ngAfterContentInit = function () {
@@ -25,7 +25,7 @@ var HighlightJsDirective = (function () {
     ], HighlightJsDirective.prototype, "useBr", void 0);
     HighlightJsDirective = __decorate([
         core_1.Directive({ selector: '[highlight-js]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+        __metadata('design:paramtypes', [core_1.ElementRef])
     ], HighlightJsDirective);
     return HighlightJsDirective;
 }());
