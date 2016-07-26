@@ -88,4 +88,19 @@ describe('highlist-js directive', () => {
             })
         )
     );
+
+    it('should call hljs.highlightBlock() with the current elementRef.nativeElement',
+        async(
+            inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+                tcb.createAsync(ContainerComponent)
+                    .then((fixture: ComponentFixture<ContainerComponent>) => {
+                        fixture.detectChanges();
+
+                        let expectedElement = fixture.debugElement.nativeElement.querySelector('[highlight-js]');
+
+                        expect(mockHljs.highlightBlock).toHaveBeenCalledWith(expectedElement);
+                    });
+            })
+        )
+    );
 })

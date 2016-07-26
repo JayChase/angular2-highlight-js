@@ -19,9 +19,11 @@ export class HighlightJsContentDirective implements OnInit, AfterViewChecked {
     }
 
     ngAfterViewChecked() {
-        if (this.elementRef.nativeElement.innerHTML && this.highlightSelector) {
+        let selector = this.highlightSelector || 'code';
 
-            let snippets = this.elementRef.nativeElement.querySelectorAll(this.highlightSelector);
+        if (this.elementRef.nativeElement.innerHTML) {
+
+            let snippets = this.elementRef.nativeElement.querySelectorAll(selector);
 
             snippets.forEach((snippet: any) => {
                hljs.highlightBlock(snippet); 

@@ -19,8 +19,9 @@ var HighlightJsContentDirective = (function () {
         }
     };
     HighlightJsContentDirective.prototype.ngAfterViewChecked = function () {
-        if (this.elementRef.nativeElement.innerHTML && this.highlightSelector) {
-            var snippets = this.elementRef.nativeElement.querySelectorAll(this.highlightSelector);
+        var selector = this.highlightSelector || 'code';
+        if (this.elementRef.nativeElement.innerHTML) {
+            var snippets = this.elementRef.nativeElement.querySelectorAll(selector);
             snippets.forEach(function (snippet) {
                 hljs.highlightBlock(snippet);
             });

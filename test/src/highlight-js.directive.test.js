@@ -58,5 +58,13 @@ testing_2.describe('highlist-js directive', function () {
             testing_2.expect(mockHljs.configure).toHaveBeenCalled();
         });
     })));
+    testing_2.it('should call hljs.highlightBlock() with the current elementRef.nativeElement', testing_2.async(testing_2.inject([testing_1.TestComponentBuilder], function (tcb) {
+        tcb.createAsync(ContainerComponent)
+            .then(function (fixture) {
+            fixture.detectChanges();
+            var expectedElement = fixture.debugElement.nativeElement.querySelector('[highlight-js]');
+            testing_2.expect(mockHljs.highlightBlock).toHaveBeenCalledWith(expectedElement);
+        });
+    })));
 });
 //# sourceMappingURL=highlight-js.directive.test.js.map
