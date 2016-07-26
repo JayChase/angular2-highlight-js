@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
+import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 
-import { HighlightJsService, HighlightJsDirective } from '../src/'; //in live this would be the node_modules path
+import { HighlightJsService, HighlightJsDirective, HighlightJsContentDirective } from '../src/'; //in live this would be the node_modules path
 
 @Component({
     moduleId: module.id,
@@ -13,19 +14,47 @@ import { HighlightJsService, HighlightJsDirective } from '../src/'; //in live th
     ],
     directives: [
         MD_CARD_DIRECTIVES,
-        HighlightJsDirective
+        MD_BUTTON_DIRECTIVES,
+        HighlightJsDirective,
+        HighlightJsContentDirective
     ]
 })
 
 export class DemoComponent implements OnInit, AfterViewInit {
+    sampleContent: string;
 
-    constructor(private el: ElementRef, private service : HighlightJsService) {
+    constructor(private el: ElementRef, private service: HighlightJsService) {
 
     }
 
     ngOnInit() { }
 
-    ngAfterViewInit() {        
-        this.service.highlight(this.el.nativeElement.querySelector('.highlight-this'));
+    ngAfterViewInit() {
+        
+    }
+
+    highlightByService(target: ElementRef) {
+        this.service.highlight(target);
+    }
+
+    addContent() {
+        this.sampleContent = `
+         <pre>
+            <code class="typescript highlight">
+                class Greeter {
+                    constructor(public greeting: string) { }
+
+                    greet() {
+                        return "hello world";
+                    }
+                };
+            </code>
+        </pre>
+        <pre>
+            <code class="javascript highlight">
+                alert('Hello, World!');
+            </code>
+        </pre>
+        `;
     }
 }

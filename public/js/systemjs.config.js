@@ -22,6 +22,7 @@
     'rxjs': { defaultExtension: 'js' },
     '@angular2-material/core': { format: 'cjs', defaultExtension: 'js', main: 'core.js' },
     '@angular2-material/card': { format: 'cjs', defaultExtension: 'js', main: 'card.js' },
+    '@angular2-material/button': { format: 'cjs', defaultExtension: 'js', main: 'button.js' },
     'angular2-highlight-js': { main: 'index.js', defaultExtension: 'js' }
     
   };

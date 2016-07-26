@@ -52,7 +52,21 @@
     </md-card-content>
 </md-card>
 <md-card>
-    <md-card-title>sample 2: using the HighlightJsService</md-card-title>
+    <md-card-title>sample 2: using the HighlightJsContent directive</md-card-title>
+    <md-card-content>
+        <p>Use this directive to handle dynamic content which contains snippets. 
+            Both the sections below have innerHTML bound to the the sampleContent property.</p>
+        <h4>Raw pre code without highlighting</h4>
+        <section [innerHTML]="sampleContent"></section>
+        <h4>Same again highlighted using HighlightJsService.highlight(element)</h4>
+        <section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section>
+    </md-card-content>
+    <md-card-actions>
+        <button md-raised-button color="primary" (click)="addContent()">highlight</button>
+    </md-card-actions>
+</md-card>
+<md-card>
+    <md-card-title>sample 3: using the HighlightJsService</md-card-title>
     <md-card-content>
         <h4>Raw pre code without highlighting</h4>
         <pre>
@@ -73,7 +87,7 @@
         </pre>
         <h4>Same again highlighted using HighlightJsService.highlight(element)</h4>
         <pre>
-            <code class="typescript highlight-this">
+            <code #snippet class="typescript highlight-this">
                 export class DemoComponent implements OnInit, AfterViewInit {
 
                     constructor(private el: ElementRef, private service : HighlightJsService) {
@@ -89,4 +103,7 @@
             </code>
         </pre>
     </md-card-content>
+    <md-card-actions>
+        <button md-raised-button color="primary" (click)="highlightByService(snippet)">highlight</button>
+    </md-card-actions>
 </md-card>

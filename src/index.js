@@ -4,4 +4,5 @@ function __export(m) {
 }
 __export(require('./highlight-js.service'));
 __export(require('./highlight-js.directive'));
+__export(require('./highlight-js-content.directive'));
 //# sourceMappingURL=index.js.map
