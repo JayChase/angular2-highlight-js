@@ -52,9 +52,10 @@ var packages = {
 
 ###Usage
 
-This library contains an attribute directive **HighlightJsDirective** and a service **HighlightJsService**.
+This library contains the following: **HighlightJsDirective**, **HighlightJsContentDirective** and **HighlightJsService**.
+Below are usage notes for each. A demo app is also available as in the [repo](https://github.com/Useful-Software-Solutions-Ltd/angular2-highlight-js/tree/master/demo).
 
-####For the attribute directive
+####For HighlightJsDirective
 
 Import the directive and declare it.
 
@@ -67,7 +68,6 @@ import { HighlightJsDirective } from 'angular2-highlight-js';
     templateUrl: 'demo.component.html',
     styleUrls: ['demo.component.css'],
     providers: [
-        HighlightJsService
     ],
     directives: [
         MD_CARD_DIRECTIVES,
@@ -100,9 +100,40 @@ Add pre code to the view as normal with highlightjs and add the **highlight-js**
 </pre>
 ```
 
-####For the service
+####For HighlightJsContentDirective
 
-This can be used to highlight code blocks in HTML bound to an element in the view using innerHTML.
+Use this to highlight the contents of and element which will be set dynamically (by setting innerHTML for example).
+
+Import the directive and declare it.
+
+```typescript
+import { HighlightJsContentDirective } from 'angular2-highlight-js';
+
+@Component({
+    moduleId: module.id,
+    selector: 'demo',
+    templateUrl: 'demo.component.html',
+    styleUrls: ['demo.component.css'],
+    providers: [        
+    ],
+    directives: [
+        MD_CARD_DIRECTIVES,
+        HighlightJsContentDirective
+    ]
+})
+```
+
+Add the attribute **highlight-js-content** to the element which will have content that requires highlighting.
+When the content is changed the directive will look for all child elements which match the selector provided and highlight them.
+If not selector is given it will default to finding all code elements.
+
+```html
+<section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section>
+```
+
+####For HighlightJsService
+
+This can be used to highlight code blocks from the code.
 
 Import the service and declare the provider.
 
