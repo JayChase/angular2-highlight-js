@@ -22,9 +22,10 @@ var HighlightJsContentDirective = (function () {
         var selector = this.highlightSelector || 'code';
         if (this.elementRef.nativeElement.innerHTML) {
             var snippets = this.elementRef.nativeElement.querySelectorAll(selector);
-            snippets.forEach(function (snippet) {
+            for (var _i = 0, snippets_1 = snippets; _i < snippets_1.length; _i++) {
+                var snippet = snippets_1[_i];
                 hljs.highlightBlock(snippet);
-            });
+            }
         }
     };
     __decorate([
