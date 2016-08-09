@@ -21,7 +21,7 @@ import { HighlightJsService, HighlightJsDirective, HighlightJsContentDirective }
 })
 
 export class DemoComponent implements OnInit, AfterViewInit {
-    sampleContent: string;
+    sampleContent: string = "";
 
     constructor(private el: ElementRef, private service: HighlightJsService) {
 

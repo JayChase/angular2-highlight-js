@@ -16,6 +16,7 @@ var DemoComponent = (function () {
     function DemoComponent(el, service) {
         this.el = el;
         this.service = service;
+        this.sampleContent = "";
     }
     DemoComponent.prototype.ngOnInit = function () { };
     DemoComponent.prototype.ngAfterViewInit = function () {
