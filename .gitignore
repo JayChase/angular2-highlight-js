@@ -31,6 +31,11 @@ public/vendor
 
 # TSD typings
 typings
+*.d.ts
 
+#all js apart from packaged lib and system.config
+*.js
+!lib/*.js
 !systemjs.config.js
 !typings/typings.d.ts
+
