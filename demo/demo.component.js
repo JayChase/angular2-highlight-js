@@ -9,9 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var card_1 = require('@angular2-material/card');
-var button_1 = require('@angular2-material/button');
-var _1 = require('../src/'); //in live this would be the node_modules path
+var highlight_js_service_1 = require('../src/highlight-js.service'); //in live this would be the node_modules path
 var DemoComponent = (function () {
     function DemoComponent(el, service) {
         this.el = el;
@@ -33,18 +31,9 @@ var DemoComponent = (function () {
             moduleId: module.id,
             selector: 'demo',
             templateUrl: 'demo.component.html',
-            styleUrls: ['demo.component.css'],
-            providers: [
-                _1.HighlightJsService
-            ],
-            directives: [
-                card_1.MD_CARD_DIRECTIVES,
-                button_1.MD_BUTTON_DIRECTIVES,
-                _1.HighlightJsDirective,
-                _1.HighlightJsContentDirective
-            ]
+            styleUrls: ['demo.component.css']
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, _1.HighlightJsService])
+        __metadata('design:paramtypes', [core_1.ElementRef, highlight_js_service_1.HighlightJsService])
     ], DemoComponent);
     return DemoComponent;
 }());

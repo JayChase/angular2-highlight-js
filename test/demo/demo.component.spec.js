@@ -1,30 +1,41 @@
-"use strict";
-var testing_1 = require('@angular/compiler/testing');
-var testing_2 = require('@angular/core/testing');
-var demo_component_1 = require('../../demo/demo.component');
-var MockHljs = (function () {
-    function MockHljs() {
-    }
-    MockHljs.prototype.configure = function (args) {
-    };
-    MockHljs.prototype.highlightBlock = function (args) {
-    };
-    return MockHljs;
-}());
-testing_2.describe('demo component', function () {
-    var mockHljs;
-    beforeEach(function () {
-        mockHljs = new MockHljs();
-        spyOn(mockHljs, 'highlightBlock');
-        spyOn(mockHljs, 'configure');
-        window.hljs = mockHljs;
-    });
-    testing_2.it('should build without error', testing_2.async(testing_2.inject([testing_1.TestComponentBuilder], function (tcb) {
-        tcb.createAsync(demo_component_1.DemoComponent)
-            .then(function (fixture) {
-            fixture.detectChanges();
-            testing_2.expect(fixture).not.toBeNull();
-        });
-    })));
-});
+// import {
+//     ComponentFixture,
+//     TestComponentBuilder
+// } from '@angular/compiler/testing';
+// import { Component, provide } from '@angular/core';
+// import {
+//     async,
+//     beforeEachProviders,
+//     describe,
+//     expect,
+//     inject,
+//     it
+// } from '@angular/core/testing';
+// import { DemoComponent } from '../../demo/demo.component';
+// class MockHljs {
+//     configure(args: any) {
+//     }
+//     highlightBlock(args: any) {
+//     }
+// }
+// describe('demo component', () => {
+//     let mockHljs: MockHljs;
+//     beforeEach(() => {
+//         mockHljs = new MockHljs();
+//         spyOn(mockHljs, 'highlightBlock');
+//         spyOn(mockHljs, 'configure');
+//         (<any>window).hljs = mockHljs;
+//     });
+//     it('should build without error',
+//         async(
+//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+//                 tcb.createAsync(DemoComponent)
+//                     .then((fixture: ComponentFixture<DemoComponent>) => {
+//                         fixture.detectChanges();
+//                         expect(fixture).not.toBeNull();
+//                     });
+//             })
+//         )
+//     );
+// }) 
 //# sourceMappingURL=demo.component.spec.js.map

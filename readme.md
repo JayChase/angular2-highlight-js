@@ -46,59 +46,50 @@ and add the package to the list of packages
  ```javascript
 var packages = {
     ...
-    'angular2-highlight-js': { main: 'lib/index.js', defaultExtension: 'js' }
+    'angular2-highlight-js': { defaultExtension: 'js' }
 };
+```
+
+Import the **HighlighJsModule** at the appropiate level in your app. If you are going to use the **HighlightJsService** than add the provider too.
+
+For example in **app.module.ts**
+
+```javascript
+import { NgModule }       from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent }   from './app.component';
+import { DemoComponent } from './demo.component';
+
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js/highlight-js.module';
+
+...
+
+@NgModule({
+    imports: [
+        //A2 stuff
+        BrowserModule,
+        HighlightJsModule,
+    ],
+    providers: [
+        HighlightJsService
+    ],
+    declarations: [
+        AppComponent,
+        DemoComponent
+    ],
+    bootstrap: [
+        AppComponent
+    ]
+})
+export class AppModule { }
 ```
 
 ###Usage
 
-This library contains the following: **HighlightJsDirective**, **HighlightJsContentDirective** and **HighlightJsService**.
+This library contains the **HighlightJsContentDirective** and **HighlightJsService**.
 Below are usage notes for each. A demo app is also available as in the [repo](https://github.com/Useful-Software-Solutions-Ltd/angular2-highlight-js/tree/master/demo).
 
-####For HighlightJsDirective
-
-Import the directive and declare it.
-
-```typescript
-import { HighlightJsDirective } from 'angular2-highlight-js';
-
-@Component({
-    moduleId: module.id,
-    selector: 'demo',
-    templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css'],
-    providers: [
-    ],
-    directives: [
-        MD_CARD_DIRECTIVES,
-        HighlightJsDirective
-    ]
-})
-```
-
-Add pre code to the view as normal with highlightjs and add the **highlight-js** attribute to the code element
-
-```html
-<pre>
-    <code highlight-js class="typescript">
-        export class HighlightJsDirective implements AfterContentInit {
-            @Input() useBr: boolean;
-
-            constructor(private elementRef: ElementRef, renderer: Renderer) {
-
-            }
-
-            ngAfterContentInit() {
-                if (this.useBr) {
-                    hljs.configure({ useBR: true });
-                }
-
-                hljs.highlightBlock(this.elementRef.nativeElement);
-            }
-        }
-    </code>
-</pre>
-```
 
 ####For HighlightJsContentDirective
 
@@ -107,19 +98,12 @@ Use this to highlight the contents of and element which will be set dynamically 
 Import the directive and declare it.
 
 ```typescript
-import { HighlightJsContentDirective } from 'angular2-highlight-js';
 
 @Component({
     moduleId: module.id,
     selector: 'demo',
     templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css'],
-    providers: [        
-    ],
-    directives: [
-        MD_CARD_DIRECTIVES,
-        HighlightJsContentDirective
-    ]
+    styleUrls: ['demo.component.css']
 })
 ```
 
@@ -144,13 +128,7 @@ import { HighlightJsService } from 'angular2-highlight-js';
     moduleId: module.id,
     selector: 'demo',
     templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css'],
-    providers: [
-        HighlightJsService
-    ],
-    directives: [
-        MD_CARD_DIRECTIVES
-    ]
+    styleUrls: ['demo.component.css']    
 })
 ```
 

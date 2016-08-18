@@ -6,53 +6,7 @@
     </md-card-content>
 </md-card>
 <md-card>
-    <md-card-title>Sample 1: using the highlight-js attribute directive</md-card-title>
-    <md-card-content>
-        <h4>Raw pre code without highlighting</h4>
-        <pre>
-            <code>
-               export class HighlightJsDirective implements AfterContentInit {
-                    @Input() useBr: boolean;
-
-                    constructor(private elementRef: ElementRef, renderer: Renderer) {
-
-                    }
-
-                    ngAfterContentInit() {
-                        if (this.useBr) {
-                            hljs.configure({ useBR: true });
-                        }
-
-                        hljs.highlightBlock(this.elementRef.nativeElement);
-                    }
-                }
-            </code>
-        </pre>
-        <h4>Same again highlighted using the highlight-js attribute directive (check index.html to see scripts required for style
-            and adding TypeScript as it is not in the common languages)</h4>
-        <pre>
-            <code highlight-js class="typescript">
-                export class HighlightJsDirective implements AfterContentInit {
-                    @Input() useBr: boolean;
-
-                    constructor(private elementRef: ElementRef, renderer: Renderer) {
-
-                    }
-
-                    ngAfterContentInit() {
-                        if (this.useBr) {
-                            hljs.configure({ useBR: true });
-                        }
-
-                        hljs.highlightBlock(this.elementRef.nativeElement);
-                    }
-                }
-            </code>
-        </pre>
-    </md-card-content>
-</md-card>
-<md-card>
-    <md-card-title>Sample 2: using the HighlightJsContent directive</md-card-title>
+    <md-card-title>Sample 1: using the HighlightJsContent directive</md-card-title>
     <md-card-content>
         <p>Use this directive to handle dynamic content which contains snippets. 
             Both the sections below have innerHTML bound to the the sampleContent property.</p>
@@ -66,40 +20,30 @@
     </md-card-actions>
 </md-card>
 <md-card>
-    <md-card-title>Sample 3: using the HighlightJsService</md-card-title>
+    <md-card-title>Sample 2: using the HighlightJsService</md-card-title>
     <md-card-content>
         <h4>Raw pre code without highlighting</h4>
         <pre>
             <code>
-                export class DemoComponent implements OnInit, AfterViewInit {
+                class Greeter {{ '{' }}
+                    constructor(public greeting: string) {{ '{' }} {{ '}' }}
 
-                    constructor(private el: ElementRef, private service : HighlightJsService) {
-
-                    }
-
-                    ngOnInit() { }
-
-                    ngAfterViewInit() {        
-                        this.service.highlight(this.el.nativeElement.querySelector('.typescript'), false);
-                    }
-                }
+                    greet() {{ '{' }}
+                        return "hello world";
+                    {{ '}' }}
+                {{ '}' }};
             </code>
         </pre>
         <h4>Same again highlighted using HighlightJsService.highlight(element)</h4>
         <pre>
             <code #snippet class="typescript highlight-this">
-                export class DemoComponent implements OnInit, AfterViewInit {
+                class Greeter {{ '{' }}
+                    constructor(public greeting: string) {{ '{' }} {{ '}' }}
 
-                    constructor(private el: ElementRef, private service : HighlightJsService) {
-
-                    }
-
-                    ngOnInit() { }
-
-                    ngAfterViewInit() {        
-                        this.service.highlight(this.el.nativeElement.querySelector('.typescript'), false);
-                    }
-                }
+                    greet() {{ '{' }}
+                        return "hello world";
+                    {{ '}' }}
+                {{ '}' }};
             </code>
         </pre>
     </md-card-content>

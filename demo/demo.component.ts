@@ -1,23 +1,12 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
-import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
-import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 
-import { HighlightJsService, HighlightJsDirective, HighlightJsContentDirective } from '../src/'; //in live this would be the node_modules path
+import { HighlightJsService } from '../src/highlight-js.service'; //in live this would be the node_modules path
 
 @Component({
     moduleId: module.id,
     selector: 'demo',
     templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css'],
-    providers: [
-        HighlightJsService
-    ],
-    directives: [
-        MD_CARD_DIRECTIVES,
-        MD_BUTTON_DIRECTIVES,
-        HighlightJsDirective,
-        HighlightJsContentDirective
-    ]
+    styleUrls: ['demo.component.css']
 })
 
 export class DemoComponent implements OnInit, AfterViewInit {

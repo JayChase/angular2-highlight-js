@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var demo_component_1 = require('./demo.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'highlight.js directive for Angular Demo';
@@ -21,9 +20,7 @@ var AppComponent = (function () {
             moduleId: module.id,
             selector: 'demo-app',
             templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css'],
-            providers: [],
-            directives: [demo_component_1.DemoComponent]
+            styleUrls: ['app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
