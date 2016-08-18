@@ -1,13 +1,13 @@
 {
   "name": "angular2-highlight-js",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "highlight.js integration with Angular 2",
   "directories": {},
   "files": [
     "lib"
   ],
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
+  "main": "./lib/highlight-js.module.js",
+  "typings": "./lib/highlight-js.module.d.ts",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\"",
     "code": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" \"karma start karma.conf.js\"",
