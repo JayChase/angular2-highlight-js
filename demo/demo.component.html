@@ -16,7 +16,7 @@
         <section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section>
     </md-card-content>
     <md-card-actions>
-        <button md-raised-button color="primary" (click)="addContent()">highlight</button>
+        <button id="btnAddContent" md-raised-button color="primary" (click)="addContent()">highlight</button>
     </md-card-actions>
 </md-card>
 <md-card>
@@ -48,6 +48,6 @@
         </pre>
     </md-card-content>
     <md-card-actions>
-        <button md-raised-button color="primary" (click)="highlightByService(snippet)">highlight</button>
+        <button id="btnHighlight" md-raised-button color="primary" (click)="highlightByService(snippet)">highlight</button>
     </md-card-actions>
 </md-card>

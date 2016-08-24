@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "2.0.0-alpha.3",
+  "version": "2.0.0",
   "description": "highlight.js integration with Angular 2",
   "directories": {},
   "files": [
@@ -81,6 +81,6 @@
     "tslint": "^3.7.4",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
-    "zone.js": "^0.6.12"
+    "zone.js": "0.6.12"
   }
 }

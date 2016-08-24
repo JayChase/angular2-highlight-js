@@ -1,51 +1,79 @@
-// import {
-//     ComponentFixture,
-//     TestComponentBuilder
-// } from '@angular/compiler/testing';
-// import { Component, provide } from '@angular/core';
-// import {
-//     async,
-//     beforeEachProviders,
-//     describe,
-//     expect,
-//     inject,
-//     it
-// } from '@angular/core/testing';
+import { Component, provide } from '@angular/core';
+import {
+    async,
+    inject,
+    TestBed,
+    ComponentFixture
+} from '@angular/core/testing';
 
-// import { DemoComponent } from '../../demo/demo.component';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
-// class MockHljs {
-//     configure(args: any) {
+import {MdInput} from '@angular2-material/input';
 
-//     }
+import { DemoComponent } from '../../demo/demo.component';
 
-//     highlightBlock(args: any) {
+import { HighlightJsService } from '../../src/highlight-js.service';
 
-//     }
-// }
+class MockHighlightJsService extends HighlightJsService {
+    highlight(codeBlock: any, useBr?: boolean): void {
+    }
+}
 
-// describe('demo component', () => {
-//     let mockHljs: MockHljs;
+describe('demo component', () => {
+    let mockHighlightJsService: MockHighlightJsService;
 
-//     beforeEach(() => {
-//         mockHljs = new MockHljs();
+    beforeEach(() => {
+        mockHighlightJsService = new MockHighlightJsService();
+        spyOn(mockHighlightJsService, 'highlight');
 
-//         spyOn(mockHljs, 'highlightBlock');
-//         spyOn(mockHljs, 'configure');
+        (<any>window).hljs = mockHighlightJsService;
 
-//         (<any>window).hljs = mockHljs;
-//     });
+        TestBed.configureTestingModule({
+            declarations: [
+                DemoComponent
+            ],
+            providers: [
+                provide(HighlightJsService, { useValue: mockHighlightJsService })
+            ]
+        });
 
-//     it('should build without error',
-//         async(
-//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-//                 tcb.createAsync(DemoComponent)
-//                     .then((fixture: ComponentFixture<DemoComponent>) => {
-//                         fixture.detectChanges();
+        TestBed.compileComponents();
+    });
 
-//                         expect(fixture).not.toBeNull();
-//                     });
-//             })
-//         )
-//     );
-// })
+    it('should build without error', async(() => {
+        TestBed.compileComponents().then(() => {
+            var fixture = TestBed.createComponent(DemoComponent);
+            fixture.detectChanges();
+            var compiled = fixture.debugElement.nativeElement;
+
+            expect(compiled).not.toBeNull();
+        });
+    }));
+
+    it('should call HighlightJsService highlight when highlight button clicked', async(() => {        
+        TestBed.compileComponents().then(() => {
+            var fixture = TestBed.createComponent(DemoComponent);
+            var compiled = fixture.debugElement.nativeElement;
+
+            compiled.querySelector('#btnHighlight').click();
+
+            fixture.detectChanges();
+
+            expect(mockHighlightJsService.highlight).toHaveBeenCalled();
+        });
+    }));
+
+    it('should call set sampleContent when add content button clicked', async(() => {
+        expect(true).toBe(true);
+        TestBed.compileComponents().then(() => {
+            var fixture = TestBed.createComponent(DemoComponent);
+            var compiled = fixture.debugElement.nativeElement;
+
+            compiled.querySelector('#btnAddContent').click();
+
+            fixture.detectChanges();
+
+            expect(fixture.componentInstance.sampleContent).toBeTruthy();
+        });
+    }));
+});

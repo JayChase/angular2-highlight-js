@@ -1,56 +1,25 @@
-// import {
-//     ComponentFixture,
-//     TestComponentBuilder
-// } from '@angular/compiler/testing';
-// import { Component, provide } from '@angular/core';
-// import {
-//     async,
-//     beforeEachProviders,
-//     describe,
-//     expect,
-//     inject,
-//     it
-// } from '@angular/core/testing';
-// import { AppComponent } from '../../demo/app.component';
-// class MockHljs {
-//     configure(args: any) {
-//     }
-//     highlightBlock(args: any) {
-//     }
-// }
-// describe('App component', () => {
-//     let mockHljs: MockHljs;
-//     beforeEach(() => {
-//         mockHljs = new MockHljs();
-//         spyOn(mockHljs, 'highlightBlock');
-//         spyOn(mockHljs, 'configure');
-//         (<any>window).hljs = mockHljs;
-//     });
-//     it('should build without error',
-//         async(
-//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-//                 tcb.createAsync(AppComponent)
-//                     .then((fixture: ComponentFixture<AppComponent>) => {
-//                         fixture.detectChanges();
-//                         expect(fixture).not.toBeNull();
-//                     });
-//             })
-//         )
-//     );
-//     it('should set the title',
-//         async(
-//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-//                 tcb.createAsync(AppComponent)
-//                     .then((fixture: ComponentFixture<AppComponent>) => {
-//                         fixture.detectChanges();
-//                         //set the title
-//                         fixture.debugElement.componentInstance.title = 'test-title';
-//                         fixture.detectChanges();
-//                         //check the title heading is test-title                        
-//                         expect(fixture.debugElement.nativeElement.querySelector('.component-title').innerText).toEqual('test-title');
-//                     });
-//             })
-//         )
-//     );
-// }) 
+"use strict";
+var testing_1 = require('@angular/core/testing');
+var app_component_1 = require('../../demo/app.component');
+describe('App component', function () {
+    var testTemplate = '<div>TEST</div>';
+    beforeEach(function () {
+        testing_1.TestBed.configureTestingModule({
+            declarations: [app_component_1.AppComponent]
+        });
+    });
+    it('should build without error', testing_1.async(function () {
+        testing_1.TestBed.overrideComponent(app_component_1.AppComponent, {
+            set: {
+                template: testTemplate
+            }
+        });
+        testing_1.TestBed.compileComponents().then(function () {
+            var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
+            fixture.detectChanges();
+            var compiled = fixture.debugElement.nativeElement;
+            expect(compiled).not.toBeNull();
+        });
+    }));
+});
 //# sourceMappingURL=app.component.spec.js.map
