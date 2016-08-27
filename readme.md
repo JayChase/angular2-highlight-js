@@ -37,7 +37,7 @@ In the SystemJs config file (systemjs.config.js) add a mapping for the package
 ```javascript
 var map = {
     ...
-    'angular2-highlight-js': 'node_modules/angular2-highlight-js'
+    'angular2-highlight-js': 'node_modules/angular2-highlight-js/lib'
 };
 ```
 
@@ -46,7 +46,7 @@ and add the package to the list of packages
  ```javascript
 var packages = {
     ...
-    'angular2-highlight-js': { defaultExtension: 'js' }
+    'angular2-highlight-js': { main: 'highlight-js.module', defaultExtension: 'js'}
 };
 ```
 
