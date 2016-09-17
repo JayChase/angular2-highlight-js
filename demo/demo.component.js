@@ -11,8 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var highlight_js_service_1 = require('../src/highlight-js.service'); //in live this would be the node_modules path
 var DemoComponent = (function () {
-    function DemoComponent(el, service) {
-        this.el = el;
+    function DemoComponent(service) {
         this.service = service;
         this.sampleContent = "";
     }
@@ -33,7 +32,7 @@ var DemoComponent = (function () {
             templateUrl: 'demo.component.html',
             styleUrls: ['demo.component.css']
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, highlight_js_service_1.HighlightJsService])
+        __metadata('design:paramtypes', [highlight_js_service_1.HighlightJsService])
     ], DemoComponent);
     return DemoComponent;
 }());

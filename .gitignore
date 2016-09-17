@@ -39,3 +39,4 @@ typings
 !systemjs.config.js
 !typings/typings.d.ts
 
+npm-debug.log.*

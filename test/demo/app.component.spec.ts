@@ -1,4 +1,4 @@
-import { Component, provide } from '@angular/core';
+import { Component} from '@angular/core';
 import {
     async,
     inject,

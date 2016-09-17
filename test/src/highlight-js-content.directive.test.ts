@@ -1,4 +1,4 @@
-import { Component, provide } from '@angular/core';
+import { Component } from '@angular/core';
 import {
     async,
     inject,
@@ -9,8 +9,7 @@ import {
 import { HighlightJsContentDirective } from '../../src/highlight-js-content.directive';
 
 @Component({
-    template: '<div><section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section></div>',
-    directives: [HighlightJsContentDirective]
+    template: '<div><section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section></div>'
 })
 class TestHostComponent {
     sampleContent = `
@@ -48,7 +47,7 @@ describe('highlight-js-content directive', () => {
     });
 
 
-    it('should call hljs.configure if useBr set', () => {
+    it('should call hljs.configure if useBr set', async(() => {
         TestBed.overrideComponent(TestHostComponent, {
             set: {
                 template: `
@@ -67,9 +66,9 @@ describe('highlight-js-content directive', () => {
 
             expect(mockHljs.configure).toHaveBeenCalled();
         });
-    });
+    }));
 
-    it('should NOT call hljs.configure if no useBr set', () => {
+    it('should NOT call hljs.configure if no useBr set', async(() => {
         TestBed.compileComponents().then(() => {
             var fixture = TestBed.createComponent(TestHostComponent);
 
@@ -77,9 +76,9 @@ describe('highlight-js-content directive', () => {
 
             expect(mockHljs.configure).not.toHaveBeenCalled();
         });
-    });
+    }));
 
-    it('should call hljs.highlightBlock() for each matching element under elementRef.nativeElement', () => {
+    it('should call hljs.highlightBlock() for each matching element under elementRef.nativeElement', async(() => {
         TestBed.overrideComponent(TestHostComponent, {
             set: {
                 template: `<div highlight-js-content=".javascript">
@@ -104,9 +103,9 @@ describe('highlight-js-content directive', () => {
 
             expect((<jasmine.Spy>mockHljs.highlightBlock).calls.count()).toEqual(2);
         });
-    });
+    }));
 
-    it('should default to code element selector is non supplied as attribute value', () => {
+    it('should default to code element selector is non supplied as attribute value', async(() => {
         TestBed.overrideComponent(TestHostComponent, {
             set: {
                 template: `<div highlight-js-content>
@@ -131,5 +130,5 @@ describe('highlight-js-content directive', () => {
 
             expect((<jasmine.Spy>mockHljs.highlightBlock).calls.count()).toEqual(2);
         });
-    });
+    }));
 });

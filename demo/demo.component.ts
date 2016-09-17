@@ -12,7 +12,7 @@ import { HighlightJsService } from '../src/highlight-js.service'; //in live this
 export class DemoComponent implements OnInit, AfterViewInit {
     sampleContent: string = "";
 
-    constructor(private el: ElementRef, private service: HighlightJsService) {
+    constructor(private service: HighlightJsService) {
 
     }
 

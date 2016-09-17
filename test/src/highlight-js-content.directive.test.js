@@ -17,8 +17,7 @@ var TestHostComponent = (function () {
     }
     TestHostComponent = __decorate([
         core_1.Component({
-            template: '<div><section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section></div>',
-            directives: [highlight_js_content_directive_1.HighlightJsContentDirective]
+            template: '<div><section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section></div>'
         }), 
         __metadata('design:paramtypes', [])
     ], TestHostComponent);
@@ -47,7 +46,7 @@ describe('highlight-js-content directive', function () {
             ]
         });
     });
-    it('should call hljs.configure if useBr set', function () {
+    it('should call hljs.configure if useBr set', testing_1.async(function () {
         testing_1.TestBed.overrideComponent(TestHostComponent, {
             set: {
                 template: "\n                        <pre highlight-js-content [useBr]=\"true\">\n                            <code class=\"javascript highlight\">\n                                alert('Hello, World!');\n                            </code>\n                        </pre>"
@@ -58,15 +57,15 @@ describe('highlight-js-content directive', function () {
             fixture.detectChanges();
             expect(mockHljs.configure).toHaveBeenCalled();
         });
-    });
-    it('should NOT call hljs.configure if no useBr set', function () {
+    }));
+    it('should NOT call hljs.configure if no useBr set', testing_1.async(function () {
         testing_1.TestBed.compileComponents().then(function () {
             var fixture = testing_1.TestBed.createComponent(TestHostComponent);
             fixture.detectChanges();
             expect(mockHljs.configure).not.toHaveBeenCalled();
         });
-    });
-    it('should call hljs.highlightBlock() for each matching element under elementRef.nativeElement', function () {
+    }));
+    it('should call hljs.highlightBlock() for each matching element under elementRef.nativeElement', testing_1.async(function () {
         testing_1.TestBed.overrideComponent(TestHostComponent, {
             set: {
                 template: "<div highlight-js-content=\".javascript\">\n                         <pre>\n                            <code class=\"javascript\" useBr=\"true\">\n                                 console.log('test snippet');\n                             </code>\n                         </pre>\n                         <pre>\n                             <code  class=\"javascript\" useBr=\"true\">\n                                 console.log('test snippet');\n                             </code>\n                       </pre>\n                     </div>"
@@ -77,8 +76,8 @@ describe('highlight-js-content directive', function () {
             fixture.detectChanges();
             expect(mockHljs.highlightBlock.calls.count()).toEqual(2);
         });
-    });
-    it('should default to code element selector is non supplied as attribute value', function () {
+    }));
+    it('should default to code element selector is non supplied as attribute value', testing_1.async(function () {
         testing_1.TestBed.overrideComponent(TestHostComponent, {
             set: {
                 template: "<div highlight-js-content>\n                         <pre>\n                            <code class=\"javascript\" useBr=\"true\">\n                                 console.log('test snippet');\n                             </code>\n                         </pre>\n                         <pre>\n                             <code  class=\"javascript\" useBr=\"true\">\n                                 console.log('test snippet');\n                             </code>\n                       </pre>\n                     </div>"
@@ -89,6 +88,6 @@ describe('highlight-js-content directive', function () {
             fixture.detectChanges();
             expect(mockHljs.highlightBlock.calls.count()).toEqual(2);
         });
-    });
+    }));
 });
 //# sourceMappingURL=highlight-js-content.directive.test.js.map
