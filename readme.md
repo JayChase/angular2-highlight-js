@@ -30,7 +30,7 @@ and any additional languages
  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/typescript.min.js"></script>
 ```
 
-####SystemJS
+####for SystemJS
 
 In the SystemJs config file (systemjs.config.js) add a mapping for the package
 
@@ -43,12 +43,25 @@ var map = {
 
 and add the package to the list of packages
 
- ```javascript
+```javascript
 var packages = {
     ...
     'angular2-highlight-js': { main: 'highlight-js.module', defaultExtension: 'js'}
 };
 ```
+
+####Or for angular-cli
+
+Add the package to **angular-cli.json** 
+
+```json
+"packages": [
+    "node_modules/angular2-highlight-js/lib"
+  ]
+```
+
+See the angular-cli (documentation)[https://github.com/angular/angular-cli#3rd-party-library-installation] for more.
+
 
 Import the **HighlighJsModule** at the appropiate level in your app. If you are going to use the **HighlightJsService** than add the provider too.
 
@@ -61,7 +74,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { DemoComponent } from './demo.component';
 
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js/highlight-js.module';
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js'; //or for angular-cli the path will be ../../node_modules/angular2-highlight-js
 
 ...
 
