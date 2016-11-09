@@ -15,7 +15,7 @@ module.exports = function (config) {
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/systemjs/dist/system.src.js',
 
-       // Reflect and Zone.js
+      // Reflect and Zone.js
       'node_modules/reflect-metadata/Reflect.js',
       'node_modules/zone.js/dist/zone.js',
       'node_modules/zone.js/dist/long-stack-trace-zone.js',
@@ -35,12 +35,8 @@ module.exports = function (config) {
 
       // paths loaded via module imports
       // Angular itself
-      { pattern: 'node_modules/@angular/**/*.js', included: false, watched: true },
-      { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: true },
-
-      //Angular Material2
-      { pattern: 'node_modules/@angular2-material/**/*.js', included: false, watched: true },
-      //{ pattern: 'node_modules/@angular2-material/**/*.js.map', included: false, watched: true },
+      { pattern: 'node_modules/@angular/!(compiler-cli|tsc-wrapped)/**/*.js', included: false, watched: true },
+      { pattern: 'node_modules/@angular/!(compiler-cli|tsc-wrapped)/**/*.js.map', included: false, watched: true },
 
       //application code
       { pattern: 'src/**/*.js', included: false, watched: true },

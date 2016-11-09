@@ -5,10 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var testing_1 = require('@angular/core/testing');
-var card_1 = require('@angular2-material/card');
-var toolbar_1 = require('@angular2-material/toolbar');
-var button_1 = require('@angular2-material/button');
-var input_1 = require('@angular2-material/input');
+var material_1 = require('@angular/material');
 var highlight_js_module_1 = require('../../src/highlight-js.module');
 var demo_component_1 = require('../../demo/demo.component');
 var highlight_js_service_1 = require('../../src/highlight-js.service');
@@ -28,10 +25,7 @@ describe('demo component', function () {
         spyOn(mockHighlightJsService, 'highlight');
         testing_1.TestBed.configureTestingModule({
             imports: [
-                card_1.MdCardModule,
-                toolbar_1.MdToolbarModule,
-                button_1.MdButtonModule,
-                input_1.MdInputModule,
+                material_1.MaterialModule.forRoot(),
                 highlight_js_module_1.HighlightJsModule
             ],
             declarations: [

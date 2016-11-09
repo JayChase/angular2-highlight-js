@@ -14,10 +14,7 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var demo_component_1 = require('./demo.component');
 var highlight_js_module_1 = require('../src/highlight-js.module');
-var card_1 = require('@angular2-material/card');
-var toolbar_1 = require('@angular2-material/toolbar');
-var button_1 = require('@angular2-material/button');
-var input_1 = require('@angular2-material/input');
+var material_1 = require('@angular/material');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,10 +27,7 @@ var AppModule = (function () {
                 //src module
                 highlight_js_module_1.HighlightJsModule,
                 //material modules
-                card_1.MdCardModule,
-                toolbar_1.MdToolbarModule,
-                button_1.MdButtonModule,
-                input_1.MdInputModule
+                material_1.MaterialModule.forRoot()
             ],
             providers: [
                 highlight_js_module_1.HighlightJsService

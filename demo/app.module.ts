@@ -8,10 +8,7 @@ import { DemoComponent } from './demo.component';
 
 import { HighlightJsModule, HighlightJsService } from '../src/highlight-js.module';
 
-import { MdCardModule } from '@angular2-material/card';
-import { MdToolbarModule } from '@angular2-material/toolbar';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdInputModule } from '@angular2-material/input';
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -21,10 +18,7 @@ import { MdInputModule } from '@angular2-material/input';
         //src module
         HighlightJsModule,
         //material modules
-        MdCardModule,
-        MdToolbarModule,
-        MdButtonModule,
-        MdInputModule
+       MaterialModule.forRoot()
     ],
     providers: [
         HighlightJsService

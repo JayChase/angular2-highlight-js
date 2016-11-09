@@ -9,16 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
 var highlight_js_content_directive_1 = require('./highlight-js-content.directive');
 var HighlightJsModule = (function () {
     function HighlightJsModule() {
     }
     HighlightJsModule = __decorate([
         core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule
-            ],
+            imports: [],
             providers: [],
             declarations: [
                 highlight_js_content_directive_1.HighlightJsContentDirective
