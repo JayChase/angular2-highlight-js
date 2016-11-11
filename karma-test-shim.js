@@ -55,7 +55,6 @@ var config = {
         '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
         '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
 
-
         'rxjs': 'node_modules/rxjs',
 
         '@angular/material': 'npm:@angular/material/material.umd.js'
