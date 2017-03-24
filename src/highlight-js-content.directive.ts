@@ -6,6 +6,7 @@ declare var hljs: any;
 
 export class HighlightJsContentDirective implements OnInit, AfterViewChecked {
     @Input() useBr: boolean;
+    @input() tabReplace: boolean;
     @Input('highlight-js-content') highlightSelector: string;
 
     constructor(private elementRef: ElementRef) {
@@ -15,6 +16,9 @@ export class HighlightJsContentDirective implements OnInit, AfterViewChecked {
     ngOnInit() {
         if (this.useBr) {
             hljs.configure({ useBR: true });
+        }
+        if (this.tabReplace) {
+            hljs.configure({ tabReplace: '  ' });
         }
     }
 
