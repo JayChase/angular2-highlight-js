@@ -7,11 +7,13 @@ export class HighlightJsService {
 
     constructor() { }
 
-    highlight(codeBlock: any, useBr?: boolean): void {
+    highlight(codeBlock: any, useBr?: boolean, tabReplace?: boolean): void {
         if (useBr) {
             hljs.configure({ useBR: true });
         }
-
+        if (tabReplace) {
+            hljs.configure({ tabReplace: '  ' });
+        }
         hljs.highlightBlock(codeBlock);
     }
 }
