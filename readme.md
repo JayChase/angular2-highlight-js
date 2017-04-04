@@ -52,16 +52,7 @@ var packages = {
 
 ####Or for angular-cli
 
-Add the package to **angular-cli.json** 
-
-```json
-"packages": [
-    "node_modules/angular2-highlight-js/lib"
-  ]
-```
-
-See the angular-cli (documentation)[https://github.com/angular/angular-cli#3rd-party-library-installation] for more.
-
+Just install the package and then import the module as below.
 
 Import the **HighlighJsModule** at the appropiate level in your app. If you are going to use the **HighlightJsService** than add the provider too.
 
@@ -74,7 +65,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { DemoComponent } from './demo.component';
 
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js'; //or for angular-cli the path will be ../../node_modules/angular2-highlight-js
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 ...
 
@@ -102,7 +93,6 @@ export class AppModule { }
 
 This library contains the **HighlightJsContentDirective** and **HighlightJsService**.
 Below are usage notes for each. A demo app is also available as in the [repo](https://github.com/Useful-Software-Solutions-Ltd/angular2-highlight-js/tree/master/demo).
-
 
 ####For HighlightJsContentDirective
 
