@@ -8,7 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var HighlightJsContentDirective = (function () {
     function HighlightJsContentDirective(elementRef) {
         this.elementRef = elementRef;
@@ -28,19 +29,19 @@ var HighlightJsContentDirective = (function () {
             }
         }
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], HighlightJsContentDirective.prototype, "useBr", void 0);
-    __decorate([
-        core_1.Input('highlight-js-content'), 
-        __metadata('design:type', String)
-    ], HighlightJsContentDirective.prototype, "highlightSelector", void 0);
-    HighlightJsContentDirective = __decorate([
-        core_1.Directive({ selector: '[highlight-js-content]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], HighlightJsContentDirective);
     return HighlightJsContentDirective;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], HighlightJsContentDirective.prototype, "useBr", void 0);
+__decorate([
+    core_1.Input('highlight-js-content'),
+    __metadata("design:type", String)
+], HighlightJsContentDirective.prototype, "highlightSelector", void 0);
+HighlightJsContentDirective = __decorate([
+    core_1.Directive({ selector: '[highlight-js-content]' }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], HighlightJsContentDirective);
 exports.HighlightJsContentDirective = HighlightJsContentDirective;
 //# sourceMappingURL=highlight-js-content.directive.js.map

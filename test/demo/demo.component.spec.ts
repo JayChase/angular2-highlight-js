@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {
     async,
     inject,
@@ -24,21 +24,21 @@ describe('demo component', () => {
     let mockHighlightJsService: MockHighlightJsService;
 
     beforeEach(() => {
-       mockHighlightJsService = new MockHighlightJsService();
+        mockHighlightJsService = new MockHighlightJsService();
         spyOn(mockHighlightJsService, 'highlight');
 
         TestBed.configureTestingModule({
             imports: [
                 MaterialModule.forRoot(),
                 HighlightJsModule
-            ],            
-            declarations: [                
-                DemoComponent                
+            ],
+            declarations: [
+                DemoComponent
             ],
             providers: [
                 {
                     provide: HighlightJsService,
-                    useClass: mockHighlightJsService 
+                    useClass: mockHighlightJsService
                 }
             ]
         });

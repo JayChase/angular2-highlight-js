@@ -3,27 +3,25 @@ import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import { HighlightJsService } from '../src/highlight-js.service'; //in live this would be the node_modules path
 
 @Component({
-    moduleId: module.id,
     selector: 'demo',
-    templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css']
+    templateUrl: './demo/demo.component.html',
+    styleUrls: ['./demo/demo.component.css']
 })
 
 export class DemoComponent implements OnInit, AfterViewInit {
-    sampleContent: string = "";
+    sampleContent = '';
 
-    constructor(private service: HighlightJsService) {
+    constructor(private highlightJsService: HighlightJsService) {
 
     }
 
     ngOnInit() { }
 
     ngAfterViewInit() {
-        
     }
 
     highlightByService(target: ElementRef) {
-        this.service.highlight(target);
+        this.highlightJsService.highlight(target);
     }
 
     addContent() {

@@ -8,7 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var HighlightJsService = (function () {
     function HighlightJsService() {
     }
@@ -18,11 +19,11 @@ var HighlightJsService = (function () {
         }
         hljs.highlightBlock(codeBlock);
     };
-    HighlightJsService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], HighlightJsService);
     return HighlightJsService;
 }());
+HighlightJsService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], HighlightJsService);
 exports.HighlightJsService = HighlightJsService;
 //# sourceMappingURL=highlight-js.service.js.map

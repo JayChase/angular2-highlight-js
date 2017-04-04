@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-
-
 import { HighlightJsContentDirective } from './highlight-js-content.directive';
 
 @NgModule({

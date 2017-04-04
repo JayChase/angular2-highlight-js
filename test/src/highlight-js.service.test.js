@@ -1,6 +1,7 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var highlight_js_service_1 = require('../../src/highlight-js.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var highlight_js_service_1 = require("../../src/highlight-js.service");
 var MockHljs = (function () {
     function MockHljs() {
     }

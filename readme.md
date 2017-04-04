@@ -113,7 +113,6 @@ Import the directive and declare it.
 ```typescript
 
 @Component({
-    moduleId: module.id,
     selector: 'demo',
     templateUrl: 'demo.component.html',
     styleUrls: ['demo.component.css']
@@ -138,7 +137,6 @@ Import the service and declare the provider.
 import { HighlightJsService } from 'angular2-highlight-js';
 
 @Component({
-    moduleId: module.id,
     selector: 'demo',
     templateUrl: 'demo.component.html',
     styleUrls: ['demo.component.css']    
