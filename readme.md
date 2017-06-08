@@ -2,6 +2,9 @@
 
 [highlight.js](https://highlightjs.org) integration with Angular2.
 
+#### Quick links
+[Plunker template](http://embed.plnkr.co/EdxsaT/)
+
 ###Install
 
 ```bash

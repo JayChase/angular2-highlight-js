@@ -11,8 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var HighlightJsContentDirective = (function () {
-    function HighlightJsContentDirective(elementRef) {
+    function HighlightJsContentDirective(elementRef, zone) {
         this.elementRef = elementRef;
+        this.zone = zone;
     }
     HighlightJsContentDirective.prototype.ngOnInit = function () {
         if (this.useBr) {
@@ -21,12 +22,14 @@ var HighlightJsContentDirective = (function () {
     };
     HighlightJsContentDirective.prototype.ngAfterViewChecked = function () {
         var selector = this.highlightSelector || 'code';
-        if (this.elementRef.nativeElement.innerHTML) {
-            var snippets = this.elementRef.nativeElement.querySelectorAll(selector);
-            for (var _i = 0, snippets_1 = snippets; _i < snippets_1.length; _i++) {
-                var snippet = snippets_1[_i];
-                hljs.highlightBlock(snippet);
-            }
+        if (this.elementRef.nativeElement.innerHTML && this.elementRef.nativeElement.querySelector) {
+            var snippets_1 = this.elementRef.nativeElement.querySelectorAll(selector);
+            this.zone.runOutsideAngular(function () {
+                for (var _i = 0, snippets_2 = snippets_1; _i < snippets_2.length; _i++) {
+                    var snippet = snippets_2[_i];
+                    hljs.highlightBlock(snippet);
+                }
+            });
         }
     };
     return HighlightJsContentDirective;
@@ -40,8 +43,10 @@ __decorate([
     __metadata("design:type", String)
 ], HighlightJsContentDirective.prototype, "highlightSelector", void 0);
 HighlightJsContentDirective = __decorate([
-    core_1.Directive({ selector: '[highlight-js-content]' }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
+    core_1.Directive({
+        selector: '[highlight-js-content]'
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef, core_1.NgZone])
 ], HighlightJsContentDirective);
 exports.HighlightJsContentDirective = HighlightJsContentDirective;
 //# sourceMappingURL=highlight-js-content.directive.js.map
