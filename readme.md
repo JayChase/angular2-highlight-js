@@ -1,8 +1,9 @@
-###angular2-highlight-js
+### angular2-highlight-js
 
 [highlight.js](https://highlightjs.org) integration with Angular2.
 
 #### Quick links
+
 [Plunker template](http://embed.plnkr.co/EdxsaT/)
 
 ###Install
@@ -11,9 +12,9 @@
 npm install --save angular2-highlight-js
 ```
 
-###Setup
+### Setup
 
-####Add highlight.js
+#### Add highlight.js
 
 Load the highlight.js theme css in your single page
 
@@ -33,7 +34,7 @@ and any additional languages
  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/typescript.min.js"></script>
 ```
 
-####for SystemJS
+#### For SystemJS
 
 In the SystemJs config file (systemjs.config.js) add a mapping for the package
 
@@ -53,7 +54,7 @@ var packages = {
 };
 ```
 
-####Or for angular-cli
+#### Or for angular-cli
 
 Just install the package and then import the module as below.
 
@@ -92,12 +93,12 @@ import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 export class AppModule { }
 ```
 
-###Usage
+### Usage
 
 This library contains the **HighlightJsContentDirective** and **HighlightJsService**.
 Below are usage notes for each. A demo app is also available as in the [repo](https://github.com/Useful-Software-Solutions-Ltd/angular2-highlight-js/tree/master/demo).
 
-####For HighlightJsContentDirective
+#### For HighlightJsContentDirective
 
 Use this to highlight the contents of and element which will be set dynamically (by setting innerHTML for example).
 
@@ -120,7 +121,7 @@ If not selector is given it will default to finding all code elements.
 <section [innerHTML]="sampleContent" highlight-js-content=".highlight"></section>
 ```
 
-####For HighlightJsService
+#### For HighlightJsService
 
 This can be used to highlight code blocks from the code.
 
