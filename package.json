@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "highlight.js integration with Angular 2",
   "directories": {},
   "files": [
@@ -24,7 +24,7 @@
     "a2-build": "ngc -p ./tsconfig-ngc.json"
   },
   "keywords": [
-    "Angular2",
+    "Angular",
     "highlight.js",
     "code snippet",
     "code formatting"
@@ -35,11 +35,11 @@
     "url": "https://www.usefuldev.com/home"
   },
   "bugs": {
-    "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-highlight-js/issues"
+    "url": "https://github.com/jaychase/angular2-highlight-js/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-highlight-js.git"
+    "url": "https://github.com/jaychase/angular2-highlight-js.git"
   },
   "license": "MIT",
   "dependencies": {},
