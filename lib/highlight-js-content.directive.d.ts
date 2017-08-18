@@ -4,6 +4,7 @@ export declare class HighlightJsContentDirective implements OnInit, AfterViewChe
     private zone;
     useBr: boolean;
     highlightSelector: string;
+    private done;
     constructor(elementRef: ElementRef, zone: NgZone);
     ngOnInit(): void;
     ngAfterViewChecked(): void;

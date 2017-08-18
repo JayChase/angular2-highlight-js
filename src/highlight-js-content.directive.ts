@@ -9,6 +9,7 @@ declare var hljs: any;
 export class HighlightJsContentDirective implements OnInit, AfterViewChecked {
     @Input() useBr: boolean;
     @Input('highlight-js-content') highlightSelector: string;
+    private done = false;
 
     constructor(private elementRef: ElementRef, private zone: NgZone) {
 
@@ -21,15 +22,19 @@ export class HighlightJsContentDirective implements OnInit, AfterViewChecked {
     }
 
     ngAfterViewChecked() {
-        const selector = this.highlightSelector || 'code';
+        if (!this.done) {
+            const selector = this.highlightSelector || 'code';
 
-        if (this.elementRef.nativeElement.innerHTML && this.elementRef.nativeElement.querySelector) {
-            const snippets = this.elementRef.nativeElement.querySelectorAll(selector);
-            this.zone.runOutsideAngular(() => {
-                for (const snippet of snippets) {
-                    hljs.highlightBlock(snippet);
-                }
-            });
+            if (this.elementRef.nativeElement.innerHTML && this.elementRef.nativeElement.querySelector) {
+                const snippets = this.elementRef.nativeElement.querySelectorAll(selector);
+                this.zone.runOutsideAngular(() => {
+                    for (const snippet of snippets) {
+                        hljs.highlightBlock(snippet);
+                    }
+                });
+
+                this.done = true;
+            }
         }
     }
 }
