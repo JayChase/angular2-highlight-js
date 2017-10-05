@@ -13,5 +13,6 @@ export class HighlightJsService {
         }
 
         hljs.highlightBlock(codeBlock);
+        hljs.lineNumbersBlock(codeBlock);
     }
 }

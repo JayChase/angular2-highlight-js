@@ -27,6 +27,11 @@ and the core script,
 ```html
  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
 ```
+and the line number script,
+
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
+```
 
 and any additional languages
 
