@@ -18,6 +18,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-highlight-js": [
+        "dist/angular-highlight-js"
+      ],
+      "angular-highlight-js/*": [
+        "dist/angular-highlight-js/*"
+      ]
+    }
   }
 }
