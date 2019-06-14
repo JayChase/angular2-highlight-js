@@ -1,0 +1,22 @@
+{
+  "name": "angular-highlight-js",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.1",
+    "@angular/core": "^8.0.1",
+    "highlight.js": "^9.15.8"
+  },
+  "main": "bundles/angular-highlight-js.umd.js",
+  "module": "fesm5/angular-highlight-js.js",
+  "es2015": "fesm2015/angular-highlight-js.js",
+  "esm5": "esm5/angular-highlight-js.js",
+  "esm2015": "esm2015/angular-highlight-js.js",
+  "fesm5": "fesm5/angular-highlight-js.js",
+  "fesm2015": "fesm2015/angular-highlight-js.js",
+  "typings": "angular-highlight-js.d.ts",
+  "metadata": "angular-highlight-js.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

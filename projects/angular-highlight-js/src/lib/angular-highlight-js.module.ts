@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AngularHighlightJsComponent } from './angular-highlight-js.component';
+import { ContentDirective } from './content/content.directive';
 
 @NgModule({
-  declarations: [AngularHighlightJsComponent],
-  imports: [
-  ],
-  exports: [AngularHighlightJsComponent]
+  declarations: [ContentDirective],
+  imports: [],
+  exports: [ContentDirective]
 })
-export class AngularHighlightJsModule { }
+export class AngularHighlightJsModule {}

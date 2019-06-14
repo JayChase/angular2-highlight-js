@@ -12,7 +12,7 @@
       },
       "root": "projects/demo",
       "sourceRoot": "projects/demo/src",
-      "prefix": "app",
+      "prefix": "hljs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -28,6 +28,8 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/highlight.js/styles/monokai-sublime.css",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
@@ -88,6 +90,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
@@ -101,9 +104,7 @@
               "projects/demo/tsconfig.spec.json",
               "projects/demo/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -124,7 +125,7 @@
       "projectType": "library",
       "root": "projects/angular-highlight-js",
       "sourceRoot": "projects/angular-highlight-js/src",
-      "prefix": "lib",
+      "prefix": "hljs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -148,12 +149,11 @@
               "projects/angular-highlight-js/tsconfig.lib.json",
               "projects/angular-highlight-js/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "demo"
 }
