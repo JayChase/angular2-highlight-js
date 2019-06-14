@@ -10,7 +10,7 @@
     "e2e": "ng e2e"
   },
   "files": [
-    "lib"
+    "dist/angular-highlight-js"
   ],
   "keywords": [
     "Angular",
