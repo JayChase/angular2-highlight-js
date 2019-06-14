@@ -12,6 +12,8 @@
   "files": [
     "dist/angular-highlight-js"
   ],
+  "typings": "dist/angular-highlight-js/public-api.d.ts",
+  "main": "dist/angular-highlight-js/public-api.d.js",
   "keywords": [
     "Angular",
     "highlight.js",
