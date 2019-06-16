@@ -1,100 +1,8 @@
 ### angular2-highlight-js
 
-[highlight.js](https://highlightjs.org) integration with Angular2.
+[highlight.js](https://highlightjs.org) integration with Angular.
 
 #### Quick links
-
-[Plunker template](http://embed.plnkr.co/EdxsaT/)
-
-###Install
-
-```bash
-npm install --save angular2-highlight-js
-```
-
-### Setup
-
-#### Add highlight.js
-
-Load the highlight.js theme css in your single page
-
-```html
-<link
-  rel="stylesheet"
-  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/monokai_sublime.min.css"
-/>
-```
-
-and the core script,
-
-```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
-```
-
-and any additional languages
-
-```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/typescript.min.js"></script>
-```
-
-#### For SystemJS
-
-In the SystemJs config file (systemjs.config.js) add a mapping for the package
-
-```javascript
-var map = {
-    ...
-    'angular2-highlight-js': 'node_modules/angular2-highlight-js/lib'
-};
-```
-
-and add the package to the list of packages
-
-```javascript
-var packages = {
-    ...
-    'angular2-highlight-js': { main: 'highlight-js.module', defaultExtension: 'js'}
-};
-```
-
-#### Or for angular-cli
-
-Just install the package and then import the module as below.
-
-Import the **HighlighJsModule** at the appropiate level in your app. If you are going to use the **HighlightJsService** than add the provider too.
-
-For example in **app.module.ts**
-
-```javascript
-import { NgModule }       from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent }   from './app.component';
-import { DemoComponent } from './demo.component';
-
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
-
-...
-
-@NgModule({
-    imports: [
-        //A2 stuff
-        BrowserModule,
-        HighlightJsModule,
-    ],
-    providers: [
-        HighlightJsService
-    ],
-    declarations: [
-        AppComponent,
-        DemoComponent
-    ],
-    bootstrap: [
-        AppComponent
-    ]
-})
-export class AppModule { }
-```
 
 ### Installation
 
@@ -116,6 +24,10 @@ hljs.registerLanguage('javascript', javascript);
 ```
 
 Import the **AngularHighlightJsModule**.
+
+```typescript
+import { AngularHighlightJsModule } from 'angular2-highlight-js';
+```
 
 ```typescript
 @NgModule({
