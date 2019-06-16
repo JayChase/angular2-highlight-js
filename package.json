@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "8.0.1-alpha.01",
+  "version": "8.0.1-alpha.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,9 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "files": [
-    "dist/angular-highlight-js"
-  ],
   "keywords": [
     "Angular",
     "highlight.js",
