@@ -1,20 +1,38 @@
 {
-  "name": "angular-highlight-js",
-  "version": "0.0.1",
+  "name": "angular2-highlight-js",
+  "version": "8.0.1-alpha.05",
+  "keywords": [
+    "Angular",
+    "highlight.js",
+    "code snippet",
+    "code formatting"
+  ],
+  "author": {
+    "name": "Jay Chase",
+    "email": "JonathanChase@outlook.com",
+    "url": "https://www.usefuldev.com/home"
+  },
+  "bugs": {
+    "url": "https://github.com/jaychase/angular2-highlight-js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaychase/angular2-highlight-js.git"
+  },
   "peerDependencies": {
     "@angular/common": "^8.0.1",
     "@angular/core": "^8.0.1",
     "highlight.js": "^9.15.8"
   },
-  "main": "bundles/angular-highlight-js.umd.js",
-  "module": "fesm5/angular-highlight-js.js",
-  "es2015": "fesm2015/angular-highlight-js.js",
-  "esm5": "esm5/angular-highlight-js.js",
-  "esm2015": "esm2015/angular-highlight-js.js",
-  "fesm5": "fesm5/angular-highlight-js.js",
-  "fesm2015": "fesm2015/angular-highlight-js.js",
-  "typings": "angular-highlight-js.d.ts",
-  "metadata": "angular-highlight-js.metadata.json",
+  "main": "bundles/angular2-highlight-js.umd.js",
+  "module": "fesm5/angular2-highlight-js.js",
+  "es2015": "fesm2015/angular2-highlight-js.js",
+  "esm5": "esm5/angular2-highlight-js.js",
+  "esm2015": "esm2015/angular2-highlight-js.js",
+  "fesm5": "fesm5/angular2-highlight-js.js",
+  "fesm2015": "fesm2015/angular2-highlight-js.js",
+  "typings": "angular2-highlight-js.d.ts",
+  "metadata": "angular2-highlight-js.metadata.json",
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"

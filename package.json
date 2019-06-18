@@ -1,17 +1,17 @@
 {
   "name": "angular2-highlight-js",
-  "version": "8.0.1-alpha.04",
+  "version": "8.0.1-alpha.05",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build angular-highlight-js && ng build demo",
+    "copy-files": "copy README.md dist/angular-highlight-js && copy LICENSE.md dist/angular-highlight-js",
+    "pack": "cd dist/angular-highlight-js && npm pack",
+    "prep-lib": " npm run build && npm run copy-files && npm run pack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "files": [
-    "dist"
-  ],
   "keywords": [
     "Angular",
     "highlight.js",
@@ -31,8 +31,7 @@
     "url": "https://github.com/jaychase/angular2-highlight-js.git"
   },
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@angular/animations": "~8.0.1",
     "@angular/cdk": "~8.0.1",
     "@angular/common": "~8.0.1",
@@ -46,7 +45,9 @@
     "highlight.js": "^9.15.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
     "@angular-devkit/build-ng-packagr": "~0.800.0",
     "@angular/cli": "~8.0.3",

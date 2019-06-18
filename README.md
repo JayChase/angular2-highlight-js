@@ -12,6 +12,15 @@ npm install --save angular2-highlight-js highlight.js
 
 ### Usage
 
+Add the highlight.js css for the style you want to use to your app's styles in **angular.json**.
+
+```json
+ "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              ...
+            ],
+```
+
 In **app.module.ts** import the highlight.js library and any languages you will be highlighting.
 
 ```typescript
