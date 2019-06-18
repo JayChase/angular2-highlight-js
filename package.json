@@ -7,7 +7,7 @@
     "build": "ng build angular-highlight-js && ng build demo",
     "copy-files": "copy README.md dist/angular-highlight-js && copy LICENSE.md dist/angular-highlight-js",
     "pack": "cd dist/angular-highlight-js && npm pack",
-    "prep-lib": "Snpm run build && npm run copy-files && npm run pack",
+    "prep-lib": "npm run build && npm run copy-files && npm run pack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
