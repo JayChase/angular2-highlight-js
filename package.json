@@ -1,13 +1,13 @@
 {
   "name": "angular2-highlight-js",
-  "version": "8.0.1-alpha.05",
+  "version": "8.0.1-beta.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build angular-highlight-js && ng build demo",
     "copy-files": "copy README.md dist/angular-highlight-js && copy LICENSE.md dist/angular-highlight-js",
     "pack": "cd dist/angular-highlight-js && npm pack",
-    "prep-lib": " npm run build && npm run copy-files && npm run pack",
+    "prep-lib": "Snpm run build && npm run copy-files && npm run pack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

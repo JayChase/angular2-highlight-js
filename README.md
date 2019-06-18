@@ -7,7 +7,7 @@
 ### Installation
 
 ```bash
-npm install --save angular2-highlight-js highlight.js
+npm install --save angular2-highlight-js@next highlight.js
 ```
 
 ### Usage
@@ -16,7 +16,7 @@ Add the highlight.js css for the style you want to use to your app's styles in *
 
 ```json
  "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+             "./node_modules/highlight.js/styles/monokai-sublime.css",
               ...
             ],
 ```
