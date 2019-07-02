@@ -1,24 +1,84 @@
-# AngularHighlightJs
+### angular2-highlight-js
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+[highlight.js](https://highlightjs.org) integration with Angular.
 
-## Code scaffolding
+#### Quick links
 
-Run `ng generate component component-name --project angular-highlight-js` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-highlight-js`.
-> Note: Don't forget to add `--project angular-highlight-js` or else it will be added to the default project in your `angular.json` file. 
+### Installation
 
-## Build
+```bash
+npm install --save angular2-highlight-js@next highlight.js
+```
 
-Run `ng build angular-highlight-js` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Usage
 
-## Publishing
+Add the highlight.js css for the style you want to use to your app's styles in **angular.json**.
 
-After building your library with `ng build angular-highlight-js`, go to the dist folder `cd dist/angular-highlight-js` and run `npm publish`.
+```json
+ "styles": [
+             "./node_modules/highlight.js/styles/monokai-sublime.css",
+              ...
+            ],
+```
 
-## Running unit tests
+In **app.module.ts** import the highlight.js library and any languages you will be highlighting.
 
-Run `ng test angular-highlight-js` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
 
-## Further help
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('javascript', javascript);
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Import the **AngularHighlightJsModule**.
+
+```typescript
+import { AngularHighlightJsModule } from 'angular2-highlight-js';
+```
+
+```typescript
+@NgModule({
+  declarations: [AppComponent],
+  imports: [...AngularHighlightJsModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+This library contains the **HighlightJsContentDirective**
+Below are usage notes for each. A demo app is also available as in the [repo]().
+
+#### For hljsContent directive
+
+Use this to highlight the contents of and element which will be set dynamically (by setting innerHTML for example).
+
+Import the directive and declare it.
+
+```typescript
+
+@Component({
+    selector: 'demo',
+    templateUrl: 'demo.component.html',
+    styleUrls: ['demo.component.css']
+})
+```
+
+Add the attribute **hljsContent** to the element which will have content that requires highlighting.
+When the content is changed the directive will look for all child elements which match the selector provided and highlight them. If no selector is given it will default to finding all code elements.
+
+```html
+<section [innerHTML]="sampleContent" hljsContent=".highlight"></section>
+```
+
+You can configure **highlight.js** by using the **[options]** property on the directive
+
+```html
+<section
+  [innerHTML]="sampleContent"
+  hljsContent=".highlight"
+  [options]="{ useBr: true }"
+></section>
+```
