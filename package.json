@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "8.0.1-beta.3",
+  "version": "8.0.1-beta.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
