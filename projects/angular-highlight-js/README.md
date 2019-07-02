@@ -7,7 +7,7 @@
 ### Installation
 
 ```bash
-npm install --save angular2-highlight-js@next highlight.js
+npm install --save angular2-highlight-js@latest highlight.js
 ```
 
 ### Usage
