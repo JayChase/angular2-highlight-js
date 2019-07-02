@@ -1,12 +1,13 @@
 {
   "name": "angular2-highlight-js",
-  "version": "8.0.1-beta.5",
+  "version": "8.0.1-beta.6",
   "keywords": [
     "Angular",
     "highlight.js",
     "code snippet",
     "code formatting"
   ],
+  "license": "MIT",
   "author": {
     "name": "Jay Chase",
     "email": "JonathanChase@outlook.com",
