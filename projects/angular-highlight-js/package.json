@@ -1,6 +1,6 @@
 {
   "name": "angular2-highlight-js",
-  "version": "8.0.1-beta.6",
+  "version": "8.0.1",
   "keywords": [
     "Angular",
     "highlight.js",
@@ -21,8 +21,8 @@
     "url": "https://github.com/jaychase/angular2-highlight-js.git"
   },
   "peerDependencies": {
-    "@angular/common": "^8.0.1",
-    "@angular/core": "^8.0.1",
+    "@angular/common": ">=7.0.0",
+    "@angular/core": ">=7.0.0",
     "highlight.js": "^9.15.8"
   }
 }
