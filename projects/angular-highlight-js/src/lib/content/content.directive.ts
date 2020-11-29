@@ -5,16 +5,16 @@ import {
   Input,
   NgZone,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
-import { IOptions } from 'highlight.js';
-import hljs from 'highlight.js/lib/highlight';
+import { configure, highlightBlock } from 'highlight.js';
+// import hljs from 'highlight.js/lib/highlight';
 
 @Directive({
-  selector: '[hljsContent]'
+  selector: '[hljsContent]',
 })
 export class ContentDirective implements OnChanges, AfterViewChecked {
-  @Input() options: IOptions;
+  @Input() options: HLJSOptions;
   @Input('hljsContent') highlightSelector: string;
   private done = false;
 
@@ -23,7 +23,7 @@ export class ContentDirective implements OnChanges, AfterViewChecked {
   ngOnChanges(simpleChanges: SimpleChanges) {
     // tslint:disable-next-line: no-string-literal
     if (simpleChanges['options'] && this.options) {
-      hljs.configure(this.options);
+      configure(this.options);
     }
   }
 
@@ -40,7 +40,7 @@ export class ContentDirective implements OnChanges, AfterViewChecked {
         );
         this.zone.runOutsideAngular(() => {
           for (const snippet of snippets) {
-            hljs.highlightBlock(snippet);
+            highlightBlock(snippet);
           }
         });
 

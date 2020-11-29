@@ -24,12 +24,12 @@ Add the highlight.js css for the style you want to use to your app's styles in *
 In **app.module.ts** import the highlight.js library and any languages you will be highlighting.
 
 ```typescript
-import hljs from 'highlight.js/lib/highlight';
+import { registerLanguage } from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 
-hljs.registerLanguage('typescript', typescript);
-hljs.registerLanguage('javascript', javascript);
+registerLanguage('typescript', typescript);
+registerLanguage('javascript', javascript);
 ```
 
 Import the **AngularHighlightJsModule**.
@@ -43,7 +43,7 @@ import { AngularHighlightJsModule } from 'angular2-highlight-js';
   declarations: [AppComponent],
   imports: [...AngularHighlightJsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

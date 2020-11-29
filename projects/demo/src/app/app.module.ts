@@ -4,13 +4,13 @@ import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularHighlightJsModule } from 'angular-highlight-js';
-import hljs from 'highlight.js/lib/highlight';
+import { registerLanguage } from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 import { AppComponent } from './app.component';
 
-hljs.registerLanguage('typescript', typescript);
-hljs.registerLanguage('javascript', javascript);
+registerLanguage('typescript', typescript);
+registerLanguage('javascript', javascript);
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,9 +19,9 @@ hljs.registerLanguage('javascript', javascript);
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    AngularHighlightJsModule
+    AngularHighlightJsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

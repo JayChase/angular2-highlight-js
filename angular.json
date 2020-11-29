@@ -131,7 +131,7 @@
       "prefix": "hljs",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",        
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/angular-highlight-js/tsconfig.lib.json",
             "project": "projects/angular-highlight-js/ng-package.json"
@@ -163,5 +163,8 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "demo",
+  "cli": {
+    "analytics": "4794b35f-6b24-4381-8cd3-17bcb2a3ec9b"
+  }
 }
